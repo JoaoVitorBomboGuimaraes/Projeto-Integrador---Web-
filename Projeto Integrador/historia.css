@@ -1,0 +1,45 @@
+/* Estilo do cabeçalho */
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    color: #0a2a66;
+  }
+  
+  header .logo {
+    flex: 1; /* O logo ocupa espaço no lado esquerdo */
+  }
+  
+  header .logo img {
+    width: 100px;
+    height: auto;
+  }
+  
+  nav {
+    flex: 2; /* O menu ocupa o centro */
+    display: flex;
+    justify-content: center; /* Centraliza o menu dentro do espaço reservado */
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    color: #0a2a66;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+  
