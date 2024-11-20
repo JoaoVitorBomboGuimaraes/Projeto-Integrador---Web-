@@ -1,152 +1,162 @@
+/* Reset e Estilo Base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-color: #0a2a66; /* Azul escuro de fundo */
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Estilo do cabeçalho */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-  header {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #ffffff;
-    color: #0a2a66;
-  }
-  
-  header .logo {
-    flex: 1; /* O logo ocupa espaço no lado esquerdo */
-  }
-  
-  header .logo img {
-    width: 100px;
-    height: auto;
-  }
-  
-  nav {
-    flex: 2; /* O menu ocupa o centro */
-    display: flex;
-    justify-content: center; /* Centraliza o menu dentro do espaço reservado */
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav ul li a {
-    color: #0a2a66;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-family: "Times New Roman", serif;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Estilo principal */
+body {
+  background-color: #0a2a66;
+  color: #ffffff;
+  font-family: 'Times New Roman', serif; /* Fonte padrão alterada para Times New Roman */
+}
+
+/* Cabeçalho */
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #0a2a66;
+}
+
+header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #0a2a66;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Banner com Imagem de Fundo (Hero Section) */
+.hero {
+  position: relative;
+  background-image: url('https://populous.com/uploads/2018/01/Tottenham-Hotspur-Stadium_1-1-1200x675-c-center.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 500px; /* Aumenta a altura da imagem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Adiciona uma camada semitransparente */
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute;
+  left: 2rem; /* Posiciona o texto mais à esquerda */
+  top: 0;
+  bottom: 0;
+  width: 40%; /* Define a largura da caixa */
+  background-color: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+  padding: 2rem;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o texto verticalmente na caixa */
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #fff;
+  text-align: justify; /* Alinha o texto de forma justificada */
+}
+
+/* Conteúdo Principal */
+main {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.matches, .news {
+  background-color: #ffffff;
+  color: #0a2a66;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.matches h2, .news h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0056d6;
+}
+
+/* Rodapé */
+footer {
+  background-color: #00224a;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+footer .footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+footer .footer-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+footer .footer-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
   main {
-    display: flex;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: #00224a; /* Azul mais escuro para o fundo da área principal */
-  }
-  
-  /* Estilo das seções de Jogos e Notícias */
-  .matches, .news {
-    background-color: #ffffff; /* Branco para o fundo das seções */
-    color: #0a2a66; /* Azul escuro para o texto */
-    padding: 1rem;
-    border-radius: 8px;
-    width: 100%;
-  }
-  
-  .matches h2, .news h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #0a2a66; /* Azul escuro */
-    font-family: "Times New Roman", serif; /* Usando a fonte serifada para os títulos */
-  }
-  
-  .match, .news-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #0a2a66;
-  }
-  
-  .match:last-child, .news-item:last-child {
-    border-bottom: none;
-  }
-  
-  .news-item h3 a {
-    color: #0a2a66;
-    text-decoration: none;
-    font-size: 1.1rem;
-  }
-  
-  .news-item p {
-    font-size: 0.9rem;
-    color: #333;
-  }
-  
-  .news-item h3 a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Ajuste de responsividade para dispositivos menores */
-  @media (max-width: 768px) {
-    main {
-      flex-direction: column;
-      gap: 1rem;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      gap: 1rem;
-      margin-left: 0;
-      margin-top: 1rem;
-    }
-  }
-  .fwp-embed {
-    width: 100%;
-    height: auto;
-  }
-  
-  .news .fwp-embed {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-  
-  .news article {
-    display: flex;
     flex-direction: column;
   }
 
-  .news-item {
-    width: 100%;
-    height: 100%;
-    display: flex;
+  nav ul {
     flex-direction: column;
-    align-items: stretch;
+    gap: 1rem;
   }
-  
-  .fwp-embed {
-    width: 100%;
-    height: auto; /* Para garantir que se ajuste ao conteúdo */
-    flex-grow: 1;
+
+  .hero-content h1 {
+    font-size: 2rem;
   }
+
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
