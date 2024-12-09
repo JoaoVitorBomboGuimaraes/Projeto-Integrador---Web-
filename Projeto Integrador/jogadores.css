@@ -1,0 +1,108 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #0a2a66; /* Azul escuro de fundo */
+  color: #ffffff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #0a2a66;
+}
+
+header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #0a2a66;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos principais */
+main {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #00224a; /* Azul mais escuro para o fundo da área principal */
+}
+
+/* Estilo das categorias */
+.categoria {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.categoria h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-family: "Times New Roman", serif;
+}
+
+/* Estilo dos jogadores */
+.jogadores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.jogador {
+  background-color: #ffffff;
+  color: #0a2a66;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 150px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra para o efeito de cartão */
+  transition: transform 0.3s ease;
+}
+
+.jogador img {
+  width: 100%;
+  height: 200px; /* Ajustando para parecer um cartão */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Efeito de hover para o jogador */
+.jogador:hover {
+  transform: scale(1.05); /* Aumenta um pouco o tamanho ao passar o mouse */
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+      gap: 1rem;
+  }
+
+  nav ul {
+      flex-direction: column;
+      gap: 1rem;
+      margin-left: 0;
+      margin-top: 1rem;
+  }
+}
