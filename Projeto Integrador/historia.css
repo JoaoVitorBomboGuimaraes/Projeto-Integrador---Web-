@@ -1,45 +1,216 @@
-/* Estilo do cabeçalho */
+/* Reset e Estilo Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Times New Roman', serif;
+}
 
+body {
+  background-color: #0a2a66;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+/* Cabeçalho */
 header {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #ffffff;
-    color: #0a2a66;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #0a2a66;
+}
+
+header .logo img {
+  width: 100px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav ul li a {
+  color: #0a2a66;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.intro {
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 50px 20px;
+}
+
+
+.subtitulo {
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', serif;
+  z-index: 1;
+  position: relative;
+  margin-top: 20px;
+  color: white; /* Remover a transparência e garantir que o subtítulo seja opaco */
+}
+
+.intro::before {
+  content: '';
+  background-image: url('https://res.cloudinary.com/dtljonz0f/image/upload/c_auto,ar_3:1,w_3840,g_auto/f_auto/q_auto/v1/gc-v1/london-pass/Banner-Feb-2022%20(2)%20(1)?_a=BAVARSAP0'); /* Insira o link para a imagem */
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.2; /* A imagem pode ter opacidade, mas o texto não */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .intro {
+    padding: 30px 10px;
   }
-  
-  header .logo {
-    flex: 1; /* O logo ocupa espaço no lado esquerdo */
+   
+  .subtitulo {
+    font-size: 1.2rem;
   }
-  
-  header .logo img {
-    width: 100px;
+}
+
+/* Navegação Secundária (Links para as seções) */
+.secondary-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #ffffff;
+  padding: 1rem;
+}
+
+.secondary-nav a {
+  color: #0a2a66;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.secondary-nav a:hover {
+  background-color: #0a2a66;
+  color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Container de conteúdo */
+.content {
+  padding: 2rem;
+}
+
+/* Seções de História */
+.historia-section {
+  padding: 2rem;
+  margin: 2rem 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.historia-section h2 {
+  color: #0a2a66;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.historia-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.historia-section img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 1rem;
+  border-radius: 8px;
+}
+
+/* Efeito de hover nas seções */
+.historia-section:hover {
+  background-color: #f4f4f4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo das imagens nas seções */
+.historia-section img {
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.historia-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .historia-section {
+    padding: 1.5rem;
+  }
+
+  .historia-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .historia-section p {
+    font-size: 1rem;
+  }
+
+  /* Ajuste da largura das imagens */
+  .historia-section img {
+    width: 100%;
     height: auto;
   }
-  
-  nav {
-    flex: 2; /* O menu ocupa o centro */
-    display: flex;
-    justify-content: center; /* Centraliza o menu dentro do espaço reservado */
+
+  .secondary-nav {
+    flex-direction: column;
+    gap: 1rem;
   }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 3rem;
-    margin: 0;
-    padding: 0;
+
+  .secondary-nav a {
+    font-size: 1rem;
   }
-  
-  nav ul li a {
-    color: #0a2a66;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-family: "Times New Roman", serif;
-    font-weight: bold;
-  }
-  
-  nav ul li a:hover {
-    text-decoration: underline;
-  }
-  
+}
+
+/* Rodapé */
+footer {
+  background-color: #0a2a66;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 1rem;
+}
+
+/* Estilo para links */
+a {
+  color: #0a2a66;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056d6;
+  text-decoration: underline;
+}
